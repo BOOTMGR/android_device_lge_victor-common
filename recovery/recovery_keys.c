@@ -22,13 +22,13 @@ int device_handle_key(int key_code, int visible) {
 
 // menu key as select item for devices with broken power button
             case KEY_MENU:
-                if (ui_get_showing_back_button()) {
+                if (ui_is_showing_back_button()) {
                     return SELECT_ITEM;
                 }
 		break;
 
             case KEY_POWER:
-                if (ui_get_showing_back_button()) {
+                if (ui_is_showing_back_button()) {
                     return SELECT_ITEM;
                 }
                 break;
@@ -43,7 +43,7 @@ int device_handle_key(int key_code, int visible) {
             case KEY_END:
             case KEY_BACKSPACE:
             case KEY_SEARCH:
-                if (ui_get_showing_back_button()) {
+                if (ui_is_showing_back_button()) {
                     return SELECT_ITEM;
                 }
             case KEY_BACK:
