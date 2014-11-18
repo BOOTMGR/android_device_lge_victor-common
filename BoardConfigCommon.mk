@@ -42,6 +42,7 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_NO_SECURE_PLAYBACK
 # Display
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 TARGET_QCOM_MEDIA_VARIANT := legacy
+TARGET_NO_HW_OVERLAY := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 BOARD_USE_MHEAP_SCREENSHOT := true
@@ -52,6 +53,7 @@ TARGET_USES_ION := false
 #TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_NO_HW_VSYNC := true
+HWUI_COMPILE_FOR_PERF := true
 BOARD_EGL_CFG := device/lge/victor-common/configs/egl.cfg
 
 # QCOM enhanced A/V (require ION)
@@ -163,4 +165,17 @@ BOARD_SEPOLICY_UNION += \
 
 # CM Hardware tunables
 BOARD_HARDWARE_CLASS := device/lge/victor-common/cmhw
+
+# We're using classic webkit engine
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
+ENABLE_WEBGL := true
+TARGET_WEBKIT_USE_MORE_MEMORY := true
+TARGET_FORCE_CPU_UPLOAD := true
+
+# Dalvik
+PRODUCT_TAGS += dalvik.gc.type-precise
+# we have enough stable system to disable jnicheck
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.checkjni=false
+
 
