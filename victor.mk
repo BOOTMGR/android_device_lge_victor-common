@@ -185,3 +185,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.strictmode.disable=1 \
     persist.webview.provider=classic
 
+# Enable MTP mode by default
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
+
+# Reduce background apps limit
+# From CAF
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.bg_apps_limit=16 \
+    ro.config.max_starting_bg=8
+
+# Experimental
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.gr.numframebuffers=3
+
+
