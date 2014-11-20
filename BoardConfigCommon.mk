@@ -176,4 +176,7 @@ TARGET_FORCE_CPU_UPLOAD := true
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false
 
+# HealthHAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.victor
+
 
