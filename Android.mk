@@ -12,6 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter victor, $(TARGET_BOOTLOADER_BOARD_NAME)),)
-    include $(all-subdir-makefiles)
-endif
+include $(all-subdir-makefiles)
+
