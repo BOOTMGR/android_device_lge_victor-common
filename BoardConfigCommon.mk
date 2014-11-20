@@ -172,9 +172,15 @@ ENABLE_WEBGL := true
 TARGET_WEBKIT_USE_MORE_MEMORY := true
 TARGET_FORCE_CPU_UPLOAD := true
 
-# we have enough stable system to disable jnicheck
+# Dalvik
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# We have enough stable system to disable jnicheck
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false
+
+# Qualcomm bionic Optimizations
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # HealthHAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.victor
