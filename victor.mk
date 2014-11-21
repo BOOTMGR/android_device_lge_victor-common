@@ -161,6 +161,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libskia_legacy
 
+# Charger mode
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
