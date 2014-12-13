@@ -1,0 +1,41 @@
+diff --git a/src/com/android/browser/BrowserSettings.java b/src/com/android/browser/BrowserSettings.java
+index 6495955..a44396c 100644
+--- a/src/com/android/browser/BrowserSettings.java
++++ b/src/com/android/browser/BrowserSettings.java
+@@ -26,6 +26,7 @@ import android.net.ConnectivityManager;
+ import android.net.NetworkInfo;
+ import android.os.Build;
+ import android.os.Message;
++import android.os.SystemProperties;
+ import android.preference.PreferenceManager;
+ import android.provider.Browser;
+ import android.provider.Settings;
+@@ -366,9 +367,14 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
+     }
+ 
+     public LayoutAlgorithm getLayoutAlgorithm() {
++	boolean useClassicWebview = "classic".equals(SystemProperties.get("persist.webview.provider"));
+         LayoutAlgorithm layoutAlgorithm = LayoutAlgorithm.NORMAL;
+         if (autofitPages()) {
+-            layoutAlgorithm = LayoutAlgorithm.TEXT_AUTOSIZING;
++            if (useClassicWebview) {
++                layoutAlgorithm = LayoutAlgorithm.NARROW_COLUMNS;
++            } else {
++                layoutAlgorithm = LayoutAlgorithm.TEXT_AUTOSIZING;
++            }
+         }
+         if (isDebugEnabled()) {
+             if (isSmallScreen()) {
+@@ -377,7 +383,11 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
+                 if (isNormalLayout()) {
+                     layoutAlgorithm = LayoutAlgorithm.NORMAL;
+                 } else {
+-                    layoutAlgorithm = LayoutAlgorithm.TEXT_AUTOSIZING;
++                    if (useClassicWebview) {
++                        layoutAlgorithm = LayoutAlgorithm.NARROW_COLUMNS;
++                    } else {
++                        layoutAlgorithm = LayoutAlgorithm.TEXT_AUTOSIZING;
++                    }
+                 }
+             }
+         }

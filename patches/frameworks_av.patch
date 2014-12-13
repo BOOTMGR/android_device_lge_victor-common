@@ -1,0 +1,26 @@
+diff --git a/camera/CameraParameters.cpp b/camera/CameraParameters.cpp
+index 65cdba4..e6eced4 100644
+--- a/camera/CameraParameters.cpp
++++ b/camera/CameraParameters.cpp
+@@ -40,6 +40,8 @@ const char CameraParameters::KEY_PREVIEW_FRAME_RATE_MODE[] = "preview-frame-rate
+ const char CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATE_MODES[] = "preview-frame-rate-modes";
+ const char CameraParameters::KEY_PREVIEW_FRAME_RATE_AUTO_MODE[] = "frame-rate-auto";
+ const char CameraParameters::KEY_PREVIEW_FRAME_RATE_FIXED_MODE[] = "frame-rate-fixed";
++const char CameraParameters::KEY_VT_MODE[] = "vt-mode";
++const char CameraParameters::FOCUS_MODE_MANUAL[] = "manual";
+ #endif
+ const char CameraParameters::KEY_PICTURE_SIZE[] = "picture-size";
+ const char CameraParameters::KEY_SUPPORTED_PICTURE_SIZES[] = "picture-size-values";
+diff --git a/include/camera/CameraParameters.h b/include/camera/CameraParameters.h
+index 02928f0..ff8e90e 100644
+--- a/include/camera/CameraParameters.h
++++ b/include/camera/CameraParameters.h
+@@ -187,6 +187,8 @@ public:
+     static const char KEY_SUPPORTED_PREVIEW_FRAME_RATE_MODES[];
+     static const char KEY_PREVIEW_FRAME_RATE_AUTO_MODE[];
+     static const char KEY_PREVIEW_FRAME_RATE_FIXED_MODE[];
++	static const char KEY_VT_MODE[];
++    static const char FOCUS_MODE_MANUAL[];
+ #endif
+     // The dimensions for captured pictures in pixels (width x height).
+     // Example value: "1024x768". Read/write.

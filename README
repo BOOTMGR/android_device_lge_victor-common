@@ -8,5 +8,8 @@ Copyright (C) 2013 Cyanogenmod Project
 
       http://www.apache.org/licenses/LICENSE-2.0
 
-Note:
-- Manually apply patches to frameworks (best way is to use diff here)
+Instructions:
+- Clone Webkit project(https://www.codeaurora.org/cgit/quic/la/platform/external/webkit/log/?h=kk_2.7_rb1.16)
+- Apply http://review.androidarmv6.org/#/c/6180/
+- Apply pacthes from /patches folder
+

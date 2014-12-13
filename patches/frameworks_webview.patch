@@ -1,0 +1,35 @@
+diff --git a/Android.mk b/Android.mk
+index 2effc4e..8f47601 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -22,7 +22,7 @@ include $(CLEAR_VARS)
+ 
+ LOCAL_MODULE := webview
+ LOCAL_MODULE_TAGS := optional
+-LOCAL_REQUIRED_MODULES := webviewchromium
++LOCAL_REQUIRED_MODULES := libwebcore webviewchromium
+ 
+ include $(BUILD_PHONY_PACKAGE)
+ 
+diff --git a/chromium/Android.mk b/chromium/Android.mk
+index d715221..d600e08 100644
+--- a/chromium/Android.mk
++++ b/chromium/Android.mk
+@@ -19,6 +19,8 @@
+ LOCAL_PATH := $(call my-dir)
+ CHROMIUM_PATH := external/chromium_org
+ 
++ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
++
+ # Java glue layer JAR, calls directly into the chromium AwContents Java API.
+ include $(CLEAR_VARS)
+ 
+@@ -114,7 +116,7 @@ $(jar_check_ok): $(full_classes_jarjar_jar) $(LOCAL_PATH)/tools/jar_check.py $(L
+ $(LOCAL_BUILT_MODULE): $(jar_check_ok)
+ endif
+ 
+-
++endif # PRODUCT_PREBUILT_WEBVIEWCHROMIUM
+ 
+ # Native support library (libwebviewchromium_plat_support.so) - does NOT link
+ # any native chromium code.

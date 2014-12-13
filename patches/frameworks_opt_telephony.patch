@@ -1,0 +1,14 @@
+diff --git a/src/java/com/android/internal/telephony/RIL.java b/src/java/com/android/internal/telephony/RIL.java
+index ca8e0b9..0da33c6 100644
+--- a/src/java/com/android/internal/telephony/RIL.java
++++ b/src/java/com/android/internal/telephony/RIL.java
+@@ -984,6 +984,9 @@ public class RIL extends BaseCommands implements CommandsInterface {
+ 
+         rr.mParcel.writeString(address);
+         rr.mParcel.writeInt(clirMode);
++		// patch e730 ril
++		rr.mParcel.writeInt(0); //whichLine
++        rr.mParcel.writeInt(0); // isEmergencyCall
+ 
+         if (uusInfo == null) {
+             rr.mParcel.writeInt(0); // UUS information is absent

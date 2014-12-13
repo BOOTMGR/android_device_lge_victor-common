@@ -1,0 +1,40 @@
+diff --git a/include/core/SkCanvas.h b/include/core/SkCanvas.h
+index 5a5cc65..0e193f2 100644
+--- a/include/core/SkCanvas.h
++++ b/include/core/SkCanvas.h
+@@ -1006,6 +1006,17 @@ public:
+         SkPaint           fDefaultPaint;
+         bool              fDone;
+     };
++	
++    /**
++     DEPRECATED -- need to remove when subclass stop relying on it.
++     Marked as 'protected' to avoid new clients using this before we can
++     completely remove it.
++
++     Specify a device for this canvas to draw into. If it is not null, its
++     reference count is incremented. If the canvas was already holding a
++     device, its reference count is decremented. The new device is returned.
++     */
++    virtual SkBaseDevice* setDevice(SkBaseDevice* device);
+ 
+ protected:
+     // Returns the canvas to be used by DrawIter. Default implementation
+@@ -1028,17 +1039,6 @@ protected:
+     // can perform copy-on-write or invalidate any cached images
+     void predrawNotify();
+ 
+-    /**
+-     DEPRECATED -- need to remove when subclass stop relying on it.
+-     Marked as 'protected' to avoid new clients using this before we can
+-     completely remove it.
+-
+-     Specify a device for this canvas to draw into. If it is not null, its
+-     reference count is incremented. If the canvas was already holding a
+-     device, its reference count is decremented. The new device is returned.
+-     */
+-    virtual SkBaseDevice* setDevice(SkBaseDevice* device);
+-
+ private:
+     class MCRec;
+ 

@@ -1,0 +1,28 @@
+diff --git a/net/base/cookie_monster.cc b/net/base/cookie_monster.cc
+index 10b9331..8ac5dc8 100644
+--- a/net/base/cookie_monster.cc
++++ b/net/base/cookie_monster.cc
+@@ -615,6 +615,10 @@ CookieList CookieMonster::GetAllCookiesForURLWithOptions(
+   return cookies;
+ }
+ 
++int CookieMonster::numCookies() {
++   return cookies_.size();
++}
++
+ CookieList CookieMonster::GetAllCookiesForURL(const GURL& url) {
+   CookieOptions options;
+   options.set_include_httponly();
+diff --git a/net/base/cookie_monster.h b/net/base/cookie_monster.h
+index 4bbf9a5..353552e 100644
+--- a/net/base/cookie_monster.h
++++ b/net/base/cookie_monster.h
+@@ -162,6 +162,8 @@ class NET_EXPORT CookieMonster : public CookieStore {
+   // only cookies.
+   CookieList GetAllCookiesForURL(const GURL& url);
+ 
++  int numCookies();
++
+   // Deletes all of the cookies.
+   int DeleteAll(bool sync_to_store);
+   // Deletes all of the cookies that have a creation_date greater than or equal
