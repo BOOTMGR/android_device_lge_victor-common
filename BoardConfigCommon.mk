@@ -28,11 +28,18 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 # Architecture
 TARGET_ARCH := arm
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := scorpion
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_LOWMEM := true
+
+ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_NEON :=true
+ARCH_ARM_HAVE_VFP := true
+TARGET_HAVE_TSLIB := true
 
 # QCOM Hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -50,7 +57,6 @@ TARGET_DOESNT_USE_FENCE_SYNC := true
 BOARD_EGL_NEEDS_FNW := true
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := false
-#TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_NO_HW_VSYNC := true
 HWUI_COMPILE_FOR_PERF := true
@@ -69,7 +75,7 @@ BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 # GPS
 #BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := victor
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm7x30
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # Wifi related defines
@@ -115,6 +121,7 @@ TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USES_MMCUTILS := true
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lge/victor-common/recovery/recovery_keys.c
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/lge/msm7x30
@@ -138,6 +145,9 @@ BOARD_WANTS_EMMC_BOOT := true
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Power HAL
+TARGET_PROVIDES_POWERHAL := true
 
 BOARD_SEPOLICY_DIRS += \
         device/lge/victor-common/sepolicy
@@ -184,5 +194,4 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # HealthHAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.victor
-
 

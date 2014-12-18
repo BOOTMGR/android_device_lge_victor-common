@@ -198,12 +198,29 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.strictmode.disable=1 \
     persist.webview.provider=classic
 
-# Enable MTP mode by default
+# Common
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp \
+    ro.telephony.call_ring.multiple=false \
+    persist.ro.ril.sms_sync_sending=1 \
+    ro.ril.def.agps.mode=2 \
+    ro.ril.def.agps.feature=1 \
+    ro.product.locale.language=en \
+    ro.product.locale.region=US \
+    ro.use_data_netmgrd=true \
 
-# Experimental
+# Low Power Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.gr.numframebuffers=3
+    lpa.decode=false \
+    use.non-omx.mp3.decoder=false \
+    use.non-omx.aac.decoder=false
+
+# Resampler quality
+PRODUCT_PROPERTY_OVERRIDES += \
+    af.resampler.quality=4
+
+# Increase speed for UMS transfer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vold.umsdirtyratio=20
 
 
