@@ -86,6 +86,19 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/init.qcom.fm.sh:root/system/etc/init.qcom.fm.sh \
     $(COMMON_PATH)/configs/thermald.conf:system/etc/thermald.conf
 
+# Charger images
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_01.png:root/res/images/chargerimages/battery_charging_01.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_02.png:root/res/images/chargerimages/battery_charging_02.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_03.png:root/res/images/chargerimages/battery_charging_03.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_04.png:root/res/images/chargerimages/battery_charging_04.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_05.png:root/res/images/chargerimages/battery_charging_05.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_bg.png:root/res/images/chargerimages/battery_charging_bg.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_charging_warning.png:root/res/images/chargerimages/battery_charging_warning.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_wait_ani_01.png:root/res/images/chargerimages/battery_wait_ani_01.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/battery_wait_ani_02.png:root/res/images/chargerimages/battery_wait_ani_02.png \
+    $(COMMON_PATH)/rootdir/res/images/chargerimages/black_bg.png:root/res/images/chargerimages/black_bg.png
+
 # wifi nvram calibration
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
@@ -160,11 +173,6 @@ PRODUCT_PACKAGES += \
 # viewed on the current OS.
 PRODUCT_PACKAGES += \
     libskia_legacy
-
-# Charger mode
-PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
