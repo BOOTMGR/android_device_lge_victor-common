@@ -17,6 +17,4 @@
 <resources>
     <!-- Volume Rocker Wake -->
     <bool name="config_show_volumeRockerWake">true</bool>
-    <!-- make home button wake configurable in display settings -->
-    <bool name="config_show_homeWake">true</bool>
 </resources>
