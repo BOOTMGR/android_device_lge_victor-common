@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.victor \
     power.victor \
-    gps.victor \
+    gps.msm7x30 \
     lights.victor \
     sensors.victor
 
