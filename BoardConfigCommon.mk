@@ -173,9 +173,6 @@ BOARD_SEPOLICY_UNION += \
 	ueventd.te \
 	wpa.te
 
-# CM Hardware tunables
-BOARD_HARDWARE_CLASS := device/lge/victor-common/cmhw
-
 # We're using classic webkit engine
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 ENABLE_WEBGL := true
