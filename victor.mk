@@ -114,7 +114,9 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/usr/keylayout/gpio-side-keypad.kl:system/usr/keylayout/gpio-side-keypad.kl \
     $(COMMON_PATH)/rootdir/system/usr/keylayout/touch_keypad.kl:system/usr/keylayout/touch_keypad.kl \
     $(COMMON_PATH)/rootdir/system/usr/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-    $(COMMON_PATH)/rootdir/system/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/touch_keypad.kl:system/usr/keylayout/touch_keypad.kl \
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/victor-keypad.kl:system/usr/keylayout/victor-keypad.kl
 
 # Recovery hack needed because reboot recovery hang
 PRODUCT_COPY_FILES += \
