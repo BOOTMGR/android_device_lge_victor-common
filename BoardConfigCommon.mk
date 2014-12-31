@@ -61,6 +61,8 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_NO_HW_VSYNC := true
 HWUI_COMPILE_FOR_PERF := true
 BOARD_EGL_CFG := device/lge/victor-common/configs/egl.cfg
+# Fake refresh rate
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 
 # QCOM enhanced A/V (require ION)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
