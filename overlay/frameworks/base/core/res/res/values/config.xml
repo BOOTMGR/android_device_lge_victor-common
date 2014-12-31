@@ -152,5 +152,11 @@
         <item>15</item>
     </integer-array>
 
+    <!-- Workaround for devices with broken keyboards -->
+    <bool name="config_forceDisableHardwareKeyboard">true</bool>
+
+    <!-- Enable lockscreen translucent decor -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+
     <integer name="config_deviceHardwareKeys">7</integer>
 </resources>

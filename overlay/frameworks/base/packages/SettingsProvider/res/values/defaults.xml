@@ -17,6 +17,9 @@
  */
 -->
 <resources>
-    <integer name="def_battery_style">0</integer>
+    <integer name="def_battery_style">1</integer>
     <bool name="def_install_non_market_apps">true</bool>
+    <integer name="def_screen_off_timeout">30000</integer>
+    <!-- Default value of Settings.System.SCREEN_ANIMATION_STYLE -->
+    <integer name="def_screen_animation_style">1</integer>
 </resources>
